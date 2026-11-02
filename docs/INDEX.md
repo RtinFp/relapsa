@@ -42,4 +42,6 @@
 
 - [brand.md](brand.md)
 - [research/](research/) — competitive notes only
-- [howto/](howto/) — REA / stack
+- [howto/rea-setup.md](howto/rea-setup.md) — REA
+- [howto/analyze-web-tfit.md](howto/analyze-web-tfit.md) — TFIT website
+- [howto/stack.md](howto/stack.md)

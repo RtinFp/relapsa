@@ -38,6 +38,12 @@ The professor assigns work **per session** (جلسه / day 01, 02, 03…).
 
 When implementing: models follow `class-domain.md` + `database.md`; API modules follow `backend-modules.md`; screens follow `frontend-flows.md`.
 
+## REA (competitive analysis)
+
+- How it works: [docs/howto/rea-setup.md](docs/howto/rea-setup.md)
+- TFIT APK is a **TWA** (`app.tfit.web.twa`) wrapping `https://web.tfit.app` — domain logic is not in the APK. Prefer web observation + store UX for features; keep notes in `docs/research/`.
+- Samsung Health APK: selective inspect only (large).
+
 ## Hard limits
 
 - Product name: **Relapsa**. Stack: Django + DRF, Expo, PostgreSQL.
