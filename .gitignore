@@ -29,6 +29,7 @@ rea/source/*
 Thumbs.db
 .idea/
 .vscode/
+.cursor/
 
 # docker
 postgres_data/

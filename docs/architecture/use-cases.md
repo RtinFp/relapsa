@@ -1,26 +1,41 @@
 # Use cases
 
-Actor: **User** (authenticated after register/login).
+Actor: **User**.
 
 ```mermaid
 flowchart LR
   user((User))
-
-  user --> UC1[Register_or_Login]
-  user --> UC2[Manage_Health_Profile]
-  user --> UC3[Log_Meal]
-  user --> UC4[Log_Activity]
-  user --> UC5[View_Progress_Report]
-  user --> UC6[View_Diet_Suggestions]
-  user --> UC7[View_Workout_Suggestions]
+  user --> UC1[UC1_Register_or_Login]
+  user --> UC2[UC2_Manage_Health_Profile]
+  user --> UC3[UC3_Log_Meal]
+  user --> UC4[UC4_Log_Activity]
+  user --> UC5[UC5_View_Progress_and_Suggestions]
 ```
 
-## Mapping to FRs
+## UC1 — Register or login
 
-| Use case | FR |
-|----------|-----|
-| Register / Login | FR1 |
-| Manage Health Profile | FR2 |
-| Log Meal | FR3 |
-| Log Activity | FR4 |
-| View Progress / Suggestions | FR5 |
+User creates an account or signs in to access Relapsa.
+
+## UC2 — Manage health profile
+
+User sets gender, age, height, weight, and goal; system computes BMI category.
+
+## UC3 — Log meal
+
+User records a meal (type + food items); system totals intake calories.
+
+## UC4 — Log activity
+
+User records a workout/activity; system records duration and calories burned.
+
+## UC5 — View progress and suggestions
+
+User opens reports (weight/BMI/calorie trends) and sees basic suggestions.
+
+| UC | FR | Activity diagram |
+|----|-----|------------------|
+| UC1 | FR1 | [activity-auth.md](activity-auth.md) |
+| UC2 | FR2 | [activity-auth.md](activity-auth.md) |
+| UC3 | FR3 | [activity-meal.md](activity-meal.md) |
+| UC4 | FR4 | [activity-fitness.md](activity-fitness.md) |
+| UC5 | FR5 | [activity-progress.md](activity-progress.md) |

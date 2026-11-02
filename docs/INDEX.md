@@ -1,53 +1,45 @@
-# Relapsa — Docs Index
+# Relapsa — Docs
 
-Health, nutrition, and fitness management system (سیستم مدیریت سلامت و تغذیه و تناسب اندام).
+**Product:** Relapsa · **Stack:** Django + DRF · Expo · PostgreSQL  
+**Repo:** [RtinFp/relapsa](https://github.com/RtinFp/relapsa) (private for now)
 
-**Product:** Relapsa — track the protocol, survive the slip, return.  
-**Stack (planned):** Django + DRF · Expo · PostgreSQL  
-**Comparables:** تی‌فیت (primary RE) · Samsung Health (selective)  
-**Repo:** private [RtinFp/relapsa](https://github.com/RtinFp/relapsa)
+## This week
 
-## Start here
-
-| Need | File |
-|------|------|
-| Brand / name | [brand.md](brand.md) |
-| This week’s lab session | [sessions/](sessions/) |
-| Canonical requirements | [requirements/](requirements/) |
-| Competitive research | [research/](research/) |
-| Diagrams & system design | [architecture/](architecture/) |
-| How to run tools | [howto/](howto/) |
+→ [Software-Engineering-Lab-Progress.md](Software-Engineering-Lab-Progress.md)  
+→ Current session: [sessions/03-diagrams.md](sessions/03-diagrams.md)
 
 ## Sessions
 
-1. [Topic & comparables](sessions/01-topic.md)
-2. [Requirements exercise](sessions/02-requirements.md)
-3. [Activity + Class diagrams](sessions/03-diagrams.md) ← current
+| Day | File |
+|-----|------|
+| 01 | [sessions/01-topic.md](sessions/01-topic.md) |
+| 02 | [sessions/02-requirements.md](sessions/02-requirements.md) |
+| 03 | [sessions/03-diagrams.md](sessions/03-diagrams.md) |
 
-## Architecture (canonical)
+## Requirements
 
-- [Use cases](architecture/use-cases.md)
-- [Activity — auth & onboarding](architecture/activity-auth.md)
-- [Activity — meal](architecture/activity-meal.md)
-- [Activity — fitness](architecture/activity-fitness.md)
-- [Activity — progress](architecture/activity-progress.md)
-- [Class — domain](architecture/class-domain.md)
-- [System](architecture/system.md)
-- [API sketch](architecture/api-sketch.md)
+- [functional.md](requirements/functional.md)
+- [non-functional.md](requirements/non-functional.md)
+- [domain.md](requirements/domain.md)
 
-## Research
+## Architecture (present these)
 
-- [Comparison matrix](research/comparison.md)
-- [TFIT findings](research/tfit.md)
-- [Samsung Health findings](research/samsung-health.md)
+| Doc | What it is |
+|-----|------------|
+| [use-cases.md](architecture/use-cases.md) | 5 use cases |
+| [activity-auth.md](architecture/activity-auth.md) | Activity — auth |
+| [activity-meal.md](architecture/activity-meal.md) | Activity — meal |
+| [activity-fitness.md](architecture/activity-fitness.md) | Activity — fitness |
+| [activity-progress.md](architecture/activity-progress.md) | Activity — progress |
+| [class-domain.md](architecture/class-domain.md) | Domain class diagram |
+| [backend-modules.md](architecture/backend-modules.md) | Django modules |
+| [database.md](architecture/database.md) | PostgreSQL ER |
+| [frontend-flows.md](architecture/frontend-flows.md) | Expo screens |
+| [system.md](architecture/system.md) | System boxes |
+| [api-sketch.md](architecture/api-sketch.md) | REST sketch |
 
-## How-to
+## Other
 
-- [REA setup & smoke test](howto/rea-setup.md)
-- [Stack notes](howto/stack.md)
-
-## Rules
-
-- Session notes = what you showed that week. Canonical truth = `requirements/` + `architecture/`.
-- Research = short bullets with evidence. No decompiled source dumps in git.
-- APKs stay under `rea/source/` locally and are gitignored.
+- [brand.md](brand.md)
+- [research/](research/) — competitive notes only
+- [howto/](howto/) — REA / stack

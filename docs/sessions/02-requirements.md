@@ -1,4 +1,4 @@
-# Session 2 — Requirements
+# Session 02 — Requirements
 
 Exercise: ≥5 functional, ≥2 non-functional, ≥1 domain.
 
