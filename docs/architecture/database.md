@@ -1,14 +1,12 @@
 # Database (PostgreSQL)
 
-ER view of Relapsa. Aligns with [class-domain.md](class-domain.md).
-
 ```mermaid
 erDiagram
   USER ||--|| HEALTH_PROFILE : has
   USER ||--o{ GOAL : sets
   USER ||--o{ MEAL : logs
   USER ||--o{ ACTIVITY : logs
-  USER ||--o{ PROGRESS_REPORT : views
+  USER ||--o{ PROGRESS_REPORT : has
   MEAL ||--o{ FOOD_ITEM : contains
 
   USER {
@@ -25,6 +23,7 @@ erDiagram
     int age
     float height_cm
     float weight_kg
+    float ideal_weight_kg
   }
 
   GOAL {
@@ -40,6 +39,7 @@ erDiagram
     uuid user_id FK
     datetime eaten_at
     string meal_type
+    string note
   }
 
   FOOD_ITEM {
@@ -57,6 +57,7 @@ erDiagram
     string activity_type
     int duration_min
     float calories_burned
+    string note
   }
 
   PROGRESS_REPORT {
@@ -64,7 +65,8 @@ erDiagram
     uuid user_id FK
     date period_start
     date period_end
+    float bmi_snapshot
   }
 ```
 
-BMI is computed from `HEALTH_PROFILE` (not stored as a required column unless we add a cache later).
+BMI is computed from profile (not a required stored column). JWT tokens are not tables (SimpleJWT).

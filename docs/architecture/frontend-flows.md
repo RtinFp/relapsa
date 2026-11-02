@@ -1,34 +1,32 @@
-# Frontend flows (Expo)
-
-Screen map for the Relapsa mobile client. Details follow activity diagrams.
+# Frontend flows (Expo Router)
 
 ```mermaid
 flowchart TD
-  splash[Splash] --> auth{Logged_in?}
-  auth -->|no| login[Login_Register]
-  login --> onboarding[Health_profile_onboarding]
-  auth -->|yes| gate{Profile_complete?}
-  gate -->|no| onboarding
-  gate -->|yes| home[Home_dashboard]
-  onboarding --> home
+  index[app_index] --> authGate{Has_JWT?}
+  authGate -->|no| login[auth_login]
+  login --> register[auth_register]
+  register --> login
+  login --> tabs
+  authGate -->|yes| profileGate{Profile_complete?}
+  profileGate -->|no| onboarding[onboarding_profile]
+  onboarding --> tabs
+  profileGate -->|yes| tabs[tabs_layout]
 
-  home --> meal[Log_meal]
-  home --> activity[Log_activity]
-  home --> progress[Progress]
-  home --> profile[Profile_goals]
-
-  meal --> home
-  activity --> home
-  progress --> home
-  profile --> home
+  tabs --> home[home]
+  tabs --> meals[meals]
+  tabs --> activities[activities]
+  tabs --> progress[progress]
+  tabs --> profile[profile]
 ```
 
-| Screen | Purpose | Related activity doc |
-|--------|---------|----------------------|
-| Login / Register | FR1 | [activity-auth.md](activity-auth.md) |
-| Onboarding profile | FR2, BMI | [activity-auth.md](activity-auth.md) |
-| Home | Hub | — |
-| Log meal | FR3 | [activity-meal.md](activity-meal.md) |
-| Log activity | FR4 | [activity-fitness.md](activity-fitness.md) |
-| Progress | FR5 | [activity-progress.md](activity-progress.md) |
-| Profile / goals | FR2 | [activity-auth.md](activity-auth.md) |
+| Screen | Route (Expo Router) | UC |
+|--------|---------------------|-----|
+| Login / Register | `app/(auth)/login.tsx`, `register.tsx` | UC1 |
+| Onboarding profile | `app/onboarding/profile.tsx` | UC2 |
+| Home | `app/(tabs)/index.tsx` | hub |
+| Meals | `app/(tabs)/meals.tsx` | UC3 |
+| Activities | `app/(tabs)/activities.tsx` | UC4 |
+| Progress | `app/(tabs)/progress.tsx` | UC5 |
+| Profile | `app/(tabs)/profile.tsx` | UC2 |
+
+JWT in `expo-secure-store`. API base URL from env (`EXPO_PUBLIC_API_URL`).

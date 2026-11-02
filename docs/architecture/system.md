@@ -1,31 +1,30 @@
 # System architecture
 
 **Product:** Relapsa  
-**Status:** planned (freeze before coding).
+**Status:** frozen for MVP build.
 
 ```mermaid
 flowchart TB
   mobile[Expo_mobile]
   api[Django_DRF]
   db[(PostgreSQL)]
-  auth[Auth_JWT]
+  jwt[SimpleJWT]
 
-  mobile -->|HTTPS_JSON| api
-  api --> auth
+  mobile -->|HTTPS_JSON_Bearer| api
+  api --> jwt
   api --> db
 ```
 
 ## Bounded contexts
 
-| Context | Responsibility |
-|---------|----------------|
-| Identity & profile | Register, login, health profile, BMI |
-| Nutrition | Meals, food items, intake calories |
-| Fitness | Activities, burn calories |
-| Insights | Progress, slips vs goals, suggestions, charts |
+| Context | App | Responsibility |
+|---------|-----|----------------|
+| Identity | accounts | Register, login, JWT |
+| Profile | profiles | Health metrics, goals, BMI |
+| Nutrition | nutrition | Meals, food items |
+| Fitness | fitness | Activities |
+| Insights | insights | Progress, suggestions |
 
 ## Out of scope (semester)
 
-- Wearable sync / Samsung-parity sensors
-- Social feeds
-- Full food barcode databases (optional later)
+Wearables, SMS OTP, trainers/live classes, Samsung-parity sensors.
