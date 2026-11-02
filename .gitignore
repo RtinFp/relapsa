@@ -9,6 +9,8 @@ venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+apps/api/db.sqlite3
+apps/api/**/__pycache__/
 
 # node / expo
 node_modules/
@@ -33,3 +35,6 @@ Thumbs.db
 
 # docker
 postgres_data/
+
+# personal exam cheat sheet (never publish)
+cheatsheet/

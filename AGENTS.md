@@ -24,6 +24,7 @@ The professor assigns work **per session** (جلسه / day 01, 02, 03…).
 | Competitive notes (no APKs, no decompile dumps) | `docs/research/` |
 | API | `apps/api/` (Django) |
 | Mobile | `apps/mobile/` (Expo) |
+| Personal exam sheet (gitignored) | `cheatsheet/relapsa-exam-fa.md` |
 
 ## Architecture docs (always Mermaid when it’s a diagram)
 
@@ -44,9 +45,19 @@ When implementing: models follow `class-domain.md` + `database.md`; API modules 
 - TFIT APK is a **TWA** (`app.tfit.web.twa`) wrapping `https://web.tfit.app` — domain logic is not in the APK. Prefer web observation + store UX for features; keep notes in `docs/research/`.
 - Samsung Health APK: selective inspect only (large).
 
+## Stack (frozen)
+
+Django + DRF · PostgreSQL · **SimpleJWT** · Expo + Expo Router. ADRs in `docs/adr/`.
+
+## Cheat sheet rule
+
+File `cheatsheet/relapsa-exam-fa.md` is the student’s Persian final-exam brain dump. It is **gitignored**.
+
+After any meaningful change to architecture docs or `apps/`, **update that cheat sheet in the same turn** (models, JWT, endpoints, screens, “استاد ممکنه بپرسه”). Never commit it.
+
 ## Hard limits
 
-- Product name: **Relapsa**. Stack: Django + DRF, Expo, PostgreSQL.
-- Never commit APKs or decompiled source (`rea/source/` is local only).
+- Product name: **Relapsa**.
+- Never commit APKs, decompiled source, or `cheatsheet/`.
 - Prefer editing existing docs over adding new folders.
 - No CONTRIBUTING / CODE_OF_CONDUCT / giant README unless the student asks.
