@@ -1,19 +1,20 @@
-# Activity — Log fitness
-
-**Status:** stub — refine after TFIT research.
+# Activity 4 — Log activity
 
 ```mermaid
 flowchart TD
-  A([Start]) --> B[Open_activity_log]
-  B --> C[Select_activity_type]
-  C --> D[Enter_duration_or_reps]
-  D --> E[Estimate_calories_burned]
-  E --> F[Save_activity]
-  F --> G[Update_daily_burn]
-  G --> H([End])
+  startNode([Start]) --> auth{Authenticated?}
+  auth -->|No| login[Go_to_auth]
+  login --> endFail([End])
+  auth -->|Yes| open[Open_activity_log]
+  open --> kind[Select_activity_type]
+  kind --> dur[Enter_duration_minutes]
+  dur --> burn[Enter_calories_burned]
+  burn --> save[POST_activities]
+  save --> confirm[Show_saved_activity]
+  confirm --> endOk([End])
 ```
 
-## Open questions (fill from RE)
+## Notes
 
-- Manual entry vs sensor/steps (semester scope: manual first)
-- Activity catalog vs custom
+- Semester scope: **manual** entry (no wearables).
+- Activity types (MVP): `walk`, `run`, `gym`, `sport`, `other`.

@@ -1,21 +1,22 @@
-# Activity — Log meal
-
-**Status:** stub — refine after TFIT research.
+# Activity 3 — Log meal
 
 ```mermaid
 flowchart TD
-  A([Start]) --> B[Open_meal_log]
-  B --> C[Select_meal_type]
-  C --> D[Add_food_items]
-  D --> E[Set_portions]
-  E --> F[Compute_meal_calories]
-  F --> G[Save_meal]
-  G --> H[Update_daily_intake]
-  H --> I([End])
+  startNode([Start]) --> auth{Authenticated?}
+  auth -->|No| login[Go_to_auth]
+  login --> endFail([End])
+  auth -->|Yes| open[Open_meal_log]
+  open --> type[Select_meal_type]
+  type --> add[Add_food_item]
+  add --> portion[Set_portion_and_calories]
+  portion --> more{Add_another_food?}
+  more -->|Yes| add
+  more -->|No| total[Sum_meal_calories]
+  total --> save[POST_meals]
+  save --> confirm[Show_saved_meal]
+  confirm --> endOk([End])
 ```
 
-## Open questions (fill from RE)
+## Meal types (MVP)
 
-- Meal types used in TFIT (breakfast/lunch/…)
-- Food catalog vs free-text
-- Whether macros are tracked beyond calories
+`breakfast` · `lunch` · `dinner` · `snack`
