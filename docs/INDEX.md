@@ -5,7 +5,7 @@ Health, nutrition, and fitness management system (سیستم مدیریت سلا
 **Product:** Relapsa — track the protocol, survive the slip, return.  
 **Stack (planned):** Django + DRF · Expo · PostgreSQL  
 **Comparables:** تی‌فیت (primary RE) · Samsung Health (selective)  
-**Repo goal:** private mono-repo `relapsa` (not created until you approve)
+**Repo:** private [RtinFp/relapsa](https://github.com/RtinFp/relapsa)
 
 ## Start here
 
