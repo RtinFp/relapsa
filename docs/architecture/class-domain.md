@@ -1,73 +1,71 @@
-# Class — Domain model
+# Class 1 — Domain overview
 
-**Status:** draft skeleton for session 3. Align attributes with TFIT research; keep Relapsa original.
+Full Relapsa domain. Detail packages in the other class docs.
 
 ```mermaid
 classDiagram
   direction TB
 
   class User {
-    +id
-    +email
-    +passwordHash
-    +createdAt
+    +UUID id
+    +string email
+    +string passwordHash
+    +datetime createdAt
   }
 
   class HealthProfile {
-    +gender
-    +age
-    +heightCm
-    +weightKg
-    +goal
-    +bmi()
-    +bmiCategory()
-  }
-
-  class Meal {
-    +id
-    +eatenAt
-    +mealType
-    +totalCalories()
-  }
-
-  class FoodItem {
-    +name
-    +calories
-    +portion
-  }
-
-  class Activity {
-    +id
-    +performedAt
-    +activityType
-    +durationMin
-    +caloriesBurned
+    +string gender
+    +int age
+    +float heightCm
+    +float weightKg
+    +float idealWeightKg
+    +bmi() float
+    +bmiCategory() string
   }
 
   class Goal {
-    +type
-    +targetValue
-    +deadline
+    +string type
+    +float targetValue
+    +date deadline
+  }
+
+  class Meal {
+    +datetime eatenAt
+    +string mealType
+    +totalCalories() float
+  }
+
+  class FoodItem {
+    +string name
+    +float calories
+    +float portion
+  }
+
+  class Activity {
+    +datetime performedAt
+    +string activityType
+    +int durationMin
+    +float caloriesBurned
   }
 
   class ProgressReport {
-    +periodStart
-    +periodEnd
-    +weightTrend()
-    +bmiTrend()
-    +calorieBalance()
+    +date periodStart
+    +date periodEnd
+    +calorieBalance() float
+  }
+
+  class SuggestionService {
+    +buildHints(user) list
   }
 
   User "1" --> "1" HealthProfile
+  User "1" --> "*" Goal
   User "1" --> "*" Meal
   User "1" --> "*" Activity
-  User "1" --> "*" Goal
   Meal "1" --> "*" FoodItem
   User "1" --> "*" ProgressReport
-  HealthProfile --> Goal
+  SuggestionService ..> User
+  SuggestionService ..> HealthProfile
+  SuggestionService ..> Meal
+  SuggestionService ..> Activity
 ```
-
-## Notes
-
-- `bmi()` / `bmiCategory()` are domain operations (see [../requirements/domain.md](../requirements/domain.md)).
-- Suggestions can stay as application services later — not required on the class diagram for session 3.
