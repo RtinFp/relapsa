@@ -42,4 +42,4 @@ Base: `/api/v1/` (trailing slashes). Auth: **Bearer JWT** (SimpleJWT). Register/
 curl -X POST http://127.0.0.1:8000/api/v1/auth/register/ -H "Content-Type: application/json" -d "{\"email\":\"you@relapsa.test\",\"password\":\"password123\"}"
 ```
 
-Class docs: [docs/01-SRS.md](../../docs/01-SRS.md) · [docs/02-use-cases.md](../../docs/02-use-cases.md) · [docs/05-database-tables.md](../../docs/05-database-tables.md)
+Docs: [SRS](../../docs/01-SRS.md) · [use cases](../../docs/02-use-cases.md) · [database](../../docs/05-database-tables.md)

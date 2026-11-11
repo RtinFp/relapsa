@@ -48,7 +48,7 @@ flowchart LR
 ```text
 apps/api/       Django API
 apps/mobile/    Expo client
-docs/           class deliverables + research/session notes
+docs/           specs, diagrams, research
 ```
 
 ![ER](docs/images/database-domain.png)
@@ -89,17 +89,15 @@ docker compose up -d
 
 Then set `DATABASE_URL=postgres://relapsa:relapsa@127.0.0.1:5432/relapsa` in `apps/api/.env` and migrate again.
 
-## Lab notes
+## More docs
 
-- [comparison](docs/research/comparison.md) · [TFIT](docs/research/tfit.md) · [Samsung Health](docs/research/samsung-health.md)
-- [progress](docs/Software-Engineering-Lab-Progress.md) · [sessions](docs/sessions/) · [ADRs](docs/adr/)
-- [docs/INDEX.md](docs/INDEX.md)
+[docs/INDEX.md](docs/INDEX.md) · [research](docs/research/) · [sessions](docs/sessions/) · [ADRs](docs/adr/)
 
-## Next
+## TODO
 
-- [ ] Wire remaining mobile screens
-- [ ] Portion × calories / tighter validation
+- [ ] Connect remaining mobile screens
+- [ ] Fix portion × calories / validation
 - [ ] Client token refresh
 - [ ] Tests
 
-**Limits right now:** no weight history charts, no goal comparison in progress, portion ignored in totals, live reports only.
+Known gaps: no weight-history charts, progress doesn’t compare goals, meal totals ignore portion, reports are live-only (no saved snapshots).

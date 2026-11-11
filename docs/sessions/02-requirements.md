@@ -2,9 +2,7 @@
 
 Exercise: ≥5 functional, ≥2 non-functional, ≥1 domain.
 
-Canonical specification (English FR/NFR + Persian appendix as submitted):
-
-- [../01-SRS.md](../01-SRS.md)
+Full write-up (with Persian text as submitted): [../01-SRS.md](../01-SRS.md)
 
 ## Domain sketch (from lecture)
 
@@ -15,8 +13,8 @@ Canonical specification (English FR/NFR + Persian appendix as submitted):
 **Processes:** BMI · calories · weight · goal comparison  
 **Outputs:** reports · suggestions · notifications · progress charts  
 
-## Delivered that week
+## That week
 
-- FR / NFR / domain answers (now in the SRS, including the Persian submission appendix)
-- Early use-case image (Obsidian) — replaced by Mermaid in [../02-use-cases.md](../02-use-cases.md)
-- Auth flow Mermaid — in [../03-activity-diagrams.md](../03-activity-diagrams.md)
+- FR / NFR / domain answers
+- Early use-case sketch → later Mermaid in [../02-use-cases.md](../02-use-cases.md)
+- Auth activity → [../03-activity-diagrams.md](../03-activity-diagrams.md)

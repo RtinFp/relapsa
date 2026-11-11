@@ -23,8 +23,8 @@ MVP: Django REST API + Expo client. Backend supports auth, health profiles, goal
 | Calorie balance | Logged food calories minus logged activity burn; **not** total energy balance |
 | Snapshot | A stored report record; the live report endpoint does not currently create one |
 
-### 1.4 References and reading order
-[Use cases](02-use-cases.md) → [activities](03-activity-diagrams.md) → [classes](04-class-diagram.md) → [database](05-database-tables.md). The root README is the short presentation. Source references below are paths relative to the repository root.
+### 1.4 Related docs
+[Use cases](02-use-cases.md) · [activities](03-activity-diagrams.md) · [classes](04-class-diagram.md) · [database](05-database-tables.md)
 
 ## 2. Overall description
 
@@ -105,18 +105,7 @@ FR-4 is the separate goal API under UC2, not a sixth diagram.
 | Validation | Some floats/zero values are still loose. |
 | Tests | Placeholder tests only. |
 
-## 7. Demo order
-
-1. README + use-case overview
-2. UC1 auth (API + mobile)
-3. Profile / meal / activity via API client
-4. One activity diagram + class/ER (User → Meal → FoodItem)
-5. Live progress vs ProgressReport table
-6. Limitations / next steps
-
-## 8. Appendix — original lab submission (Persian)
-
-From session 02 homework.
+## 7. Appendix — Persian requirements (session 02)
 
 ### Functional (as submitted)
 
@@ -135,6 +124,4 @@ From session 02 homework.
 
 1. سیستم باید بی‌ام‌آی را با توجه به استانداردهای سلامت محاسبه کرده و طبقه‌بندی کند.
 
-### Notes from that homework
-
-Also mentioned then (not all built): privacy/performance hardening, weight-trend series, goal comparison — see §6.
+Also noted that week (not all built yet): privacy/performance hardening, weight-trend series, goal comparison.
