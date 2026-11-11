@@ -1,28 +1,105 @@
 # Relapsa
 
-Health, nutrition, and fitness tracker for a university Software Engineering lab.
+Health, nutrition and fitness tracker for a university Software Engineering lab.
 
 Fall off the plan → log it → get back on.
 
-**Stack (planned):** Django + DRF · Expo · PostgreSQL
+> **Status:** API covers auth, profile, goals, meals, activities and progress. Mobile has working login/register; other tabs are still placeholders.
 
-## Layout
+## Deliverables
 
-```text
-docs/           requirements, diagrams, lab notes
-apps/api/       backend (Django) — not started
-apps/mobile/    client (Expo) — not started
+| | |
+|---|---|
+| SRS | [docs/01-SRS.md](docs/01-SRS.md) |
+| Use cases | [docs/02-use-cases.md](docs/02-use-cases.md) |
+| Activity diagrams | [docs/03-activity-diagrams.md](docs/03-activity-diagrams.md) |
+| Class diagram | [docs/04-class-diagram.md](docs/04-class-diagram.md) |
+| DB tables | [docs/05-database-tables.md](docs/05-database-tables.md) |
+
+## What works
+
+| Feature | API | Mobile |
+|---|---|---|
+| Register / login (JWT) | Yes | Yes |
+| Health profile + BMI | Yes | Placeholder |
+| Goals | Yes (separate CRUD) | Not connected |
+| Meals + food items | Yes | Placeholder |
+| Activity log | Yes | Placeholder |
+| Progress + hints | Yes (live, no saved snapshots) | Placeholder |
+| Admin | Django Admin | — |
+
+![System use cases](docs/images/uc-00-system-overview.png)
+
+## Stack
+
+```mermaid
+flowchart LR
+    Mobile[Expo mobile] -->|JSON + JWT| API[Django REST API]
+    Admin[Django Admin] --> ORM[Django ORM]
+    API --> ORM
+    ORM --> DB[(SQLite or PostgreSQL)]
 ```
 
-Docs start at [docs/INDEX.md](docs/INDEX.md).
+- Backend: Django 5 + DRF + SimpleJWT
+- Mobile: Expo 58 + Expo Router + SecureStore
+- DB: SQLite by default; Postgres via `docker compose`
+- Apps: accounts, profiles, nutrition, fitness, insights
 
-## Run database (later)
+```text
+apps/api/       Django API
+apps/mobile/    Expo client
+docs/           class deliverables + research/session notes
+```
+
+![ER](docs/images/database-domain.png)
+
+Models: User, HealthProfile, Goal, Meal, FoodItem, Activity, ProgressReport.  
+`UserManager` is not a table. Live progress does not write `ProgressReport` rows. Meal totals sum item calories (portion is stored, not multiplied).
+
+## Run
+
+### API
+
+```powershell
+cd apps/api
+py -3 -m venv .venv
+.\.venv\Scripts\pip install -r requirements.txt
+Copy-Item .env.example .env
+.\.venv\Scripts\python manage.py migrate
+.\.venv\Scripts\python manage.py runserver
+```
+
+`http://127.0.0.1:8000` · API prefix `/api/v1/`
+
+### Mobile
+
+```powershell
+cd apps/mobile
+npm ci
+npm run start
+```
+
+`EXPO_PUBLIC_API_URL` defaults to `http://127.0.0.1:8000/api/v1` (Android emulator: `http://10.0.2.2:8000/api/v1`).
+
+### Optional Postgres
 
 ```bash
 docker compose up -d
 ```
 
-## Notes
+Then set `DATABASE_URL=postgres://relapsa:relapsa@127.0.0.1:5432/relapsa` in `apps/api/.env` and migrate again.
 
-Comparable apps (TFIT, Samsung Health) were reviewed for requirements only.  
-Binaries and decompiled code stay on the local machine and are not in this repo.
+## Lab notes
+
+- [comparison](docs/research/comparison.md) · [TFIT](docs/research/tfit.md) · [Samsung Health](docs/research/samsung-health.md)
+- [progress](docs/Software-Engineering-Lab-Progress.md) · [sessions](docs/sessions/) · [ADRs](docs/adr/)
+- [docs/INDEX.md](docs/INDEX.md)
+
+## Next
+
+- [ ] Wire remaining mobile screens
+- [ ] Portion × calories / tighter validation
+- [ ] Client token refresh
+- [ ] Tests
+
+**Limits right now:** no weight history charts, no goal comparison in progress, portion ignored in totals, live reports only.

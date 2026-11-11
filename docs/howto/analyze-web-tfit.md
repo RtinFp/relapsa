@@ -50,5 +50,5 @@ REA also has website observation commands (Chrome family). Same idea as B: obser
 
 ## Relapsa rule
 
-Observations → our Mermaid in `docs/architecture/`.  
+Observations → our Mermaid in `docs/02`–`05` (use cases / activities / class / DB).
 Never copy TFIT branding, copy, or proprietary assets into `apps/`.

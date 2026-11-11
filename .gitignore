@@ -9,13 +9,27 @@ venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
-apps/api/db.sqlite3
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
 apps/api/**/__pycache__/
 
-# node / expo
+# media / builds
+media/
+build/
+dist/
+coverage/
+*.egg-info/
+
+# node / expo / native
 node_modules/
 .expo/
-dist/
+web-build/
+android/
+ios/
+*.jks
+*.keystore
 
 # local reverse-engineering only (never commit)
 rea/source/*

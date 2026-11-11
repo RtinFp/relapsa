@@ -85,7 +85,7 @@ Stack signals (from loaded assets): React, MUI, Redux, React Query, Sentry.
 | Progress: minutes, kcal charts, body regions | Body composition / BMR can be stretch goals |
 | Manual activity minutes | Prefer structured meal + activity logging as core |
 
-Relapsa stays original: Expo + Django; domain from [../architecture/class-domain.md](../architecture/class-domain.md).
+Relapsa stays original: Expo + Django; domain from [../04-class-diagram.md](../04-class-diagram.md).
 
 ## Evidence log
 

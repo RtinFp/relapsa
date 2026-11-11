@@ -13,5 +13,5 @@ Use **Expo Router** file-based routes (`app/` directory).
 
 ## Consequences
 
-- Screen map matches `docs/architecture/frontend-flows.md`.
+- Screen map matches `apps/mobile/README.md` (and the UC flows in `docs/02-use-cases.md`).
 - Learning path is folder-by-folder, not a custom navigator soup.

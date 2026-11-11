@@ -17,13 +17,13 @@ JADX headless JAR  +  JDK 17+
 Evidence JSON  (findings + limits + file hashes)
        │
        ▼
-docs/research/*.md   →   docs/architecture/*.md (Mermaid)
+docs/research/*.md   →   docs/01–05 Mermaid deliverables (+ docs/images/)
 ```
 
 1. **Ask** — one focused question (package map, auth, meals…).
 2. **Inspect** — REA drives JADX; result is **evidence** (what was seen + what is unknown).
 3. **Synthesize** — short bullets in `docs/research/` (no decompiled dumps in git).
-4. **Design** — update Relapsa Mermaid in `docs/architecture/`.
+4. **Design** — update Relapsa Mermaid in `docs/02`–`05` (not a parallel `docs/architecture/` tree).
 
 ## What we installed on this machine
 

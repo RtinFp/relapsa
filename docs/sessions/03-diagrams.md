@@ -6,18 +6,12 @@
 
 | # | Deliverable | File | Ready? |
 |---|-------------|------|--------|
-| 1 | Use cases (5) | [../architecture/use-cases.md](../architecture/use-cases.md) | Yes |
-| 2 | Activity — auth | [../architecture/activity-auth.md](../architecture/activity-auth.md) | Yes |
-| 3 | Activity — profile | [../architecture/activity-profile.md](../architecture/activity-profile.md) | Yes |
-| 4 | Activity — meal | [../architecture/activity-meal.md](../architecture/activity-meal.md) | Yes |
-| 5 | Activity — fitness | [../architecture/activity-fitness.md](../architecture/activity-fitness.md) | Yes |
-| 6 | Activity — progress | [../architecture/activity-progress.md](../architecture/activity-progress.md) | Yes |
-| 7 | Class — domain | [../architecture/class-domain.md](../architecture/class-domain.md) | Yes |
-| 8 | Class — accounts | [../architecture/class-accounts.md](../architecture/class-accounts.md) | Yes |
-| 9 | Class — profile | [../architecture/class-profile.md](../architecture/class-profile.md) | Yes |
-| 10 | Class — nutrition | [../architecture/class-nutrition.md](../architecture/class-nutrition.md) | Yes |
-| 11 | Class — fitness/insights | [../architecture/class-fitness-insights.md](../architecture/class-fitness-insights.md) | Yes |
+| 1 | Use cases (5) | [../02-use-cases.md](../02-use-cases.md) | Yes |
+| 2 | Activity diagrams (5) | [../03-activity-diagrams.md](../03-activity-diagrams.md) | Yes |
+| 3 | Class diagram | [../04-class-diagram.md](../04-class-diagram.md) | Yes |
+| 4 | Database tables / ER | [../05-database-tables.md](../05-database-tables.md) | Yes |
+| 5 | SRS (requirements + limits) | [../01-SRS.md](../01-SRS.md) | Yes |
 
-Supporting: [backend-modules](../architecture/backend-modules.md) · [database](../architecture/database.md) · [api-sketch](../architecture/api-sketch.md) · [frontend-flows](../architecture/frontend-flows.md)
+Supporting setup notes: [apps/api/README.md](../../apps/api/README.md) · [apps/mobile/README.md](../../apps/mobile/README.md)
 
-Open this file in lab, then jump to the Mermaid docs above.
+Open this file in lab, then jump to the five deliverables above.

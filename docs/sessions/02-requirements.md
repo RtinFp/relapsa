@@ -2,11 +2,9 @@
 
 Exercise: ≥5 functional, ≥2 non-functional, ≥1 domain.
 
-Canonical lists live in:
+Canonical specification (English FR/NFR + Persian appendix as submitted):
 
-- [../requirements/functional.md](../requirements/functional.md)
-- [../requirements/non-functional.md](../requirements/non-functional.md)
-- [../requirements/domain.md](../requirements/domain.md)
+- [../01-SRS.md](../01-SRS.md)
 
 ## Domain sketch (from lecture)
 
@@ -19,6 +17,6 @@ Canonical lists live in:
 
 ## Delivered that week
 
-- FR / NFR / domain answers (see links above)
-- Early use-case image (Obsidian) — replace with Mermaid in [../architecture/use-cases.md](../architecture/use-cases.md)
-- Auth flow Mermaid — moved to [../architecture/activity-auth.md](../architecture/activity-auth.md)
+- FR / NFR / domain answers (now in the SRS, including the Persian submission appendix)
+- Early use-case image (Obsidian) — replaced by Mermaid in [../02-use-cases.md](../02-use-cases.md)
+- Auth flow Mermaid — in [../03-activity-diagrams.md](../03-activity-diagrams.md)

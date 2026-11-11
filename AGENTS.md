@@ -8,9 +8,9 @@ The professor assigns work **per session** (جلسه / day 01, 02, 03…).
 
 1. Read `docs/Software-Engineering-Lab-Progress.md` — what this week asks for.
 2. Put the **submit/present** page in `docs/sessions/NN-….md` (short, links out).
-3. Put **canonical** diagrams and specs under `docs/architecture/` or `docs/requirements/` (Mermaid, presentation-ready).
+3. Keep the **five class deliverables** under `docs/01-SRS.md` … `docs/05-database-tables.md` (plus `docs/images/`). Do not recreate parallel copies under `docs/architecture/` or `docs/requirements/`.
 4. Do **not** invent homework the professor did not ask for. Match the count/type they said (e.g. 5 use cases, N activity diagrams).
-5. Code in `apps/` only after architecture for that piece exists in `docs/architecture/`.
+5. Code in `apps/` only after the matching deliverable/docs exist for that piece.
 
 ## Where things live
 
@@ -19,25 +19,20 @@ The professor assigns work **per session** (جلسه / day 01, 02, 03…).
 | Week tracker | `docs/Software-Engineering-Lab-Progress.md` |
 | Docs map | `docs/INDEX.md` |
 | This week’s hand-in | `docs/sessions/` |
-| FR / NFR / domain | `docs/requirements/` |
-| Use cases, activities, classes, system, API, DB, UI flows, backend modules | `docs/architecture/` |
+| SRS / FR / NFR | `docs/01-SRS.md` |
+| Use cases | `docs/02-use-cases.md` |
+| Activity diagrams | `docs/03-activity-diagrams.md` |
+| Class diagram | `docs/04-class-diagram.md` |
+| Database tables / ER | `docs/05-database-tables.md` |
+| Diagram images | `docs/images/` |
 | Competitive notes (no APKs, no decompile dumps) | `docs/research/` |
 | API | `apps/api/` (Django) |
 | Mobile | `apps/mobile/` (Expo) |
 | Personal exam sheet (gitignored) | `cheatsheet/relapsa-exam-fa.md` |
 
-## Architecture docs (always Mermaid when it’s a diagram)
+## Mapping docs → code
 
-- `use-cases.md` — use cases for the product
-- `activity-*.md` — one flow per major scenario (or sections the session asks for)
-- `class-domain.md` — domain classes → maps to Django models
-- `backend-modules.md` — Django apps / modules
-- `database.md` — ER / table relations (PostgreSQL)
-- `frontend-flows.md` — Expo screens and navigation
-- `system.md` — boxes: mobile → API → DB
-- `api-sketch.md` — REST resources
-
-When implementing: models follow `class-domain.md` + `database.md`; API modules follow `backend-modules.md`; screens follow `frontend-flows.md`.
+When implementing: models follow `docs/04-class-diagram.md` + `docs/05-database-tables.md`; API routes stay aligned with `apps/api/README.md` and the use-case triggers in `docs/02-use-cases.md`; screens follow `apps/mobile/README.md` and `docs/02` / `docs/03`.
 
 ## REA (competitive analysis)
 
@@ -47,7 +42,7 @@ When implementing: models follow `class-domain.md` + `database.md`; API modules 
 
 ## Stack (frozen)
 
-Django + DRF · PostgreSQL · **SimpleJWT** · Expo + Expo Router. ADRs in `docs/adr/`.
+Django + DRF · PostgreSQL (optional; SQLite default locally) · **SimpleJWT** · Expo + Expo Router. ADRs in `docs/adr/`.
 
 ## Cheat sheet rule
 
@@ -59,5 +54,5 @@ After any meaningful change to architecture docs or `apps/`, **update that cheat
 
 - Product name: **Relapsa**.
 - Never commit APKs, decompiled source, or `cheatsheet/`.
-- Prefer editing existing docs over adding new folders.
+- Prefer editing the five deliverables over adding new doc folders.
 - No CONTRIBUTING / CODE_OF_CONDUCT / giant README unless the student asks.
