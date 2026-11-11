@@ -28,11 +28,11 @@ Fall off the plan → log it → get back on.
 | Progress + hints | Yes (live, no saved snapshots) | Placeholder |
 | Admin | Django Admin | — |
 
-![System use cases](docs/images/uc-00-system-overview.png)
+![System use cases](https://raw.githubusercontent.com/RtinFp/relapsa/main/docs/images/uc-00-system-overview.png)
 
 ## Stack
 
-![Architecture](docs/images/architecture-stack.png)
+![Architecture](https://raw.githubusercontent.com/RtinFp/relapsa/main/docs/images/architecture-stack.png)
 
 - Backend: Django 5 + DRF + SimpleJWT
 - Mobile: Expo 58 + Expo Router + SecureStore
@@ -45,7 +45,7 @@ apps/mobile/    Expo client
 docs/           specs, diagrams, research
 ```
 
-![ER](docs/images/database-domain.png)
+![ER](https://raw.githubusercontent.com/RtinFp/relapsa/main/docs/images/database-domain.png)
 
 Models: User, HealthProfile, Goal, Meal, FoodItem, Activity, ProgressReport.  
 `UserManager` is not a table. Live progress does not write `ProgressReport` rows. Meal totals sum item calories (portion is stored, not multiplied).
