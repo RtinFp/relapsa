@@ -32,13 +32,7 @@ Fall off the plan → log it → get back on.
 
 ## Stack
 
-```mermaid
-flowchart LR
-    Mobile[Expo mobile] -->|JSON + JWT| API[Django REST API]
-    Admin[Django Admin] --> ORM[Django ORM]
-    API --> ORM
-    ORM --> DB[(SQLite or PostgreSQL)]
-```
+![Architecture](docs/images/architecture-stack.svg)
 
 - Backend: Django 5 + DRF + SimpleJWT
 - Mobile: Expo 58 + Expo Router + SecureStore

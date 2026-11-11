@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="220" viewBox="0 0 920 220" role="img" aria-label="Relapsa architecture">
+  <rect width="920" height="220" fill="#ffffff"/>
+  <rect x="40" y="70" width="180" height="70" rx="10" fill="#f6f8fa" stroke="#24292f" stroke-width="2"/>
+  <text x="130" y="112" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#24292f">Expo mobile</text>
+
+  <path d="M230 105 H310" stroke="#24292f" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="270" y="92" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#57606a">JSON + JWT</text>
+
+  <rect x="320" y="70" width="200" height="70" rx="10" fill="#f6f8fa" stroke="#24292f" stroke-width="2"/>
+  <text x="420" y="112" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#24292f">Django REST API</text>
+
+  <path d="M530 105 H610" stroke="#24292f" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="620" y="70" width="140" height="70" rx="10" fill="#f6f8fa" stroke="#24292f" stroke-width="2"/>
+  <text x="690" y="112" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#24292f">Django ORM</text>
+
+  <path d="M770 105 H830" stroke="#24292f" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <ellipse cx="870" cy="105" rx="40" ry="28" fill="#f6f8fa" stroke="#24292f" stroke-width="2"/>
+  <text x="870" y="100" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#24292f">SQLite /</text>
+  <text x="870" y="118" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#24292f">Postgres</text>
+
+  <rect x="320" y="20" width="200" height="36" rx="8" fill="#ddf4ff" stroke="#0969da" stroke-width="1.5"/>
+  <text x="420" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#0969da">Django Admin</text>
+  <path d="M420 56 V70" stroke="#0969da" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#24292f"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#0969da"/>
+    </marker>
+  </defs>
+</svg>
