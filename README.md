@@ -32,7 +32,7 @@ Fall off the plan → log it → get back on.
 
 ## Stack
 
-![Architecture](docs/images/architecture-stack.svg)
+![Architecture](docs/images/architecture-stack.png)
 
 - Backend: Django 5 + DRF + SimpleJWT
 - Mobile: Expo 58 + Expo Router + SecureStore
